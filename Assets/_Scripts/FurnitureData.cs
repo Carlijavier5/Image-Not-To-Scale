@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FurnitureData : ScriptableObject {
-
-    [SerializeField] private WebsiteItem item;
-    [SerializeField] private GameObject model;
-
-    
-}
-
 public class FurnitureManager : MonoBehaviour {
 
     [SerializeField] private GameObject[] models;
@@ -57,6 +49,11 @@ public class FurnitureManager : MonoBehaviour {
     }
 }
 
-public class WebsiteItem : ScriptableObject {
+public enum ScaleUnit { Mouse, Eagle, Frog }
 
+public class WebsiteItem : ScriptableObject {
+    public Sprite websitePNG;
+    [Range(0, 10)] public int avgReviews;
+    public string description;
+    public ScaleUnit scaleUnit;
 }
