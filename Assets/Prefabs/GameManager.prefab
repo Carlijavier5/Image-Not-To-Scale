@@ -781,6 +781,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WebsiteManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1441987634977377708, guid: f501ffb014c644748ab0e21759658ef2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3735071316576635393, guid: f501ffb014c644748ab0e21759658ef2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
