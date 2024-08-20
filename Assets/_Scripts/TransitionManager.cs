@@ -36,12 +36,12 @@ public class TransitionManager : MonoBehaviour {
         loadingMotion.FinishLoading();
     }
 
-    private void RevealMainMenu() => StartCoroutine(CoverScreen(false));
+    private void RevealMainMenu() => StartCoroutine(ICoverScreen(false));
 
     public void StartGame() => StartCoroutine(IStartGame());
 
     private IEnumerator IStartGame() {
-        yield return StartCoroutine(CoverScreen(true));
+        yield return StartCoroutine(ICoverScreen(true));
         AsyncOperation loadOP = SceneManager.LoadSceneAsync(1);
         loadingMotion.InitiateLoading();
         yield return new WaitForSeconds(4f);
@@ -51,20 +51,37 @@ public class TransitionManager : MonoBehaviour {
         loadingMotion.FinishLoading();
     }
 
-    private void BeginGame() => StartCoroutine(UnfadeFB());
+    private void BeginGame() => StartCoroutine(IUnfadeFB());
 
-    private IEnumerator UnfadeFB() {
-        while (cg.alpha > 0) {
-            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
-            yield return null;
-        }
+    public void FadeFB(bool fadeout) {
+        if (fadeout) StartCoroutine(IFadeFB());
+        else StartCoroutine(IUnfadeFB());
     }
 
-    private IEnumerator CoverScreen(bool fadeout) {
+    private IEnumerator IUnfadeFB() {
+        while (cg.alpha > 0) {
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.6f);
+            yield return null;
+        } OnFadeChange?.Invoke(false);
+        OnFadeChange = null;
+    }
+
+    private IEnumerator IFadeFB() {
+        while (cg.alpha < 1) {
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 1, Time.deltaTime);
+            yield return null;
+        } OnFadeChange?.Invoke(true);
+        OnFadeChange = null;
+    }
+
+    public void CoverScreen(bool fadeout) => StartCoroutine(ICoverScreen(fadeout));
+
+    private IEnumerator ICoverScreen(bool fadeout) {
         cg.alpha = 1;
         float target = fadeout ? 1 : 0;
         fadeBG.fillClockwise = fadeout;
         if (fadeout) cg.blocksRaycasts = fadeout;
+        if (fadeout) fadeBG.fillAmount = 0;
         while (fadeBG.fillAmount != target) {
             float delta = Time.deltaTime * (1 / (transitionTime == 0 ? 1 : transitionTime));
             fadeBG.fillAmount = Mathf.MoveTowards(fadeBG.fillAmount, target, delta);
