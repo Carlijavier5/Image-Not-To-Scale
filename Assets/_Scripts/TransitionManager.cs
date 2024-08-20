@@ -36,12 +36,12 @@ public class TransitionManager : MonoBehaviour {
         loadingMotion.FinishLoading();
     }
 
-    private void RevealMainMenu() => StartCoroutine(CoverScreen(false));
+    private void RevealMainMenu() => StartCoroutine(ICoverScreen(false));
 
     public void StartGame() => StartCoroutine(IStartGame());
 
     private IEnumerator IStartGame() {
-        yield return StartCoroutine(CoverScreen(true));
+        yield return StartCoroutine(ICoverScreen(true));
         AsyncOperation loadOP = SceneManager.LoadSceneAsync(1);
         loadingMotion.InitiateLoading();
         yield return new WaitForSeconds(4f);
@@ -51,16 +51,32 @@ public class TransitionManager : MonoBehaviour {
         loadingMotion.FinishLoading();
     }
 
-    private void BeginGame() => StartCoroutine(UnfadeFB());
+    private void BeginGame() => StartCoroutine(IUnfadeFB());
 
-    private IEnumerator UnfadeFB() {
+    public void FadeFB(bool fadeout) {
+        if (fadeout) StartCoroutine(IFadeFB());
+        else StartCoroutine(IUnfadeFB());
+    }
+
+    private IEnumerator IUnfadeFB() {
         while (cg.alpha > 0) {
             cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
             yield return null;
-        }
+        } OnFadeChange?.Invoke(false);
+        OnFadeChange = null;
     }
 
-    private IEnumerator CoverScreen(bool fadeout) {
+    private IEnumerator IFadeFB() {
+        while (cg.alpha < 1) {
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
+            yield return null;
+        } OnFadeChange?.Invoke(true);
+        OnFadeChange = null;
+    }
+
+    public void CoverScreen(bool fadeout) => StartCoroutine(ICoverScreen(fadeout));
+
+    private IEnumerator ICoverScreen(bool fadeout) {
         cg.alpha = 1;
         float target = fadeout ? 1 : 0;
         fadeBG.fillClockwise = fadeout;
