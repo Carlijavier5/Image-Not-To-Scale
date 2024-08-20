@@ -462,7 +462,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6519120336467900778, guid: d7467e980e4f0c6469b93c7d7aa578cf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 491983492}
   m_SourcePrefab: {fileID: 100100000, guid: d7467e980e4f0c6469b93c7d7aa578cf, type: 3}
 --- !u!224 &491983490 stripped
 RectTransform:
@@ -470,6 +474,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 491983489}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &491983491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6519120336467900778, guid: d7467e980e4f0c6469b93c7d7aa578cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 491983489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491983492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491983491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a79cd7b6beba94380da22fdf9b60ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tabGroup: {fileID: 1893231658}
 --- !u!1 &540681380
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,14 +728,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7971698, b: 0.9739896, a: 1}
+  m_Color: {r: 1, g: 0.9009434, b: 0.9866654, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 815d960090829ab458de06bda75da85d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1192,6 +1215,7 @@ GameObject:
   - component: {fileID: 1893231655}
   - component: {fileID: 1893231657}
   - component: {fileID: 1893231656}
+  - component: {fileID: 1893231658}
   m_Layer: 5
   m_Name: WebsiteHeader
   m_TagString: Untagged
@@ -1258,6 +1282,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893231654}
   m_CullTransparentMesh: 1
+--- !u!114 &1893231658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893231654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605aa5c125c81754a9ac5e3dc9d4703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pages:
+  - {fileID: 762788504}
+  - {fileID: 1496951456}
+  _tabIdle: {fileID: 21300000, guid: 11925924ddfae2a4ab33ed23d21cc6fc, type: 3}
+  _tabHover: {fileID: 21300000, guid: ecd073b96c7640648bd1ca4fa14cc58c, type: 3}
+  _tabActive: {fileID: 21300000, guid: 6c9de3bf3c9a14e40a5d739a3ed4f325, type: 3}
 --- !u!1001 &4160969119411250993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1389,7 +1431,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6519120336467900778, guid: d7467e980e4f0c6469b93c7d7aa578cf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4160969119411250996}
   m_SourcePrefab: {fileID: 100100000, guid: d7467e980e4f0c6469b93c7d7aa578cf, type: 3}
 --- !u!224 &4160969119411250994 stripped
 RectTransform:
@@ -1397,6 +1443,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4160969119411250993}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4160969119411250995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6519120336467900778, guid: d7467e980e4f0c6469b93c7d7aa578cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4160969119411250993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4160969119411250996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160969119411250995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a79cd7b6beba94380da22fdf9b60ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tabGroup: {fileID: 1893231658}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
