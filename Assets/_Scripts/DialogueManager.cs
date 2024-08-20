@@ -8,6 +8,8 @@ public enum DialogueType { Start }
 
 public class DialogueManager : MonoBehaviour {
 
+    public event System.Action OnDialogueEnd;
+
     private enum State { Idle, Writing, Awaiting }
     private State state;
 
@@ -108,7 +110,7 @@ public class DialogueManager : MonoBehaviour {
                                                  dialogueBox.localScale.z);
             yield return null;
         } yield return new WaitForSeconds(0.5f) ;
-        
+        OnDialogueEnd?.Invoke();
     }
 
     private IEnumerator IPlayDialogue() {

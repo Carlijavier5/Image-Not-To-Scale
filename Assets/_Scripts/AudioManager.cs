@@ -25,6 +25,21 @@ public class AudioManager : MonoBehaviour {
             return;
         }
     }
+
+    public void PlayMusic(string clipName) {
+        SoundClip soundClip = clips.FirstOrDefault((soundClip) => soundClip.name == clipName);
+        if (soundClip == null) {
+            Debug.LogError($"'{clipName}' was not found among the audio files;");
+        } else {
+            musicSource.clip = soundClip.clip;
+            musicSource.Play();
+        }
+    }
+
+    public void PlayMusicWithPreamble(string introName, string loopName) {
+        SoundClip introClip = clips.FirstOrDefault((soundClip) => soundClip.name == introName);
+        SoundClip loopClip = clips.FirstOrDefault((soundClip) => soundClip.name == loopName);
+    }
     
     public float PlaySFX(string clipName, float pitchVarAmp = 0) {
         SoundClip soundClip = clips.FirstOrDefault((soundClip) => soundClip.name == clipName);
