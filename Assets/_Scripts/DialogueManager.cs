@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public enum DialogueType { Start }
+public enum DialogueType { Start, Final }
 
 public class DialogueManager : MonoBehaviour {
 
@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI textMesh;
     [SerializeField] private RectTransform dialogueBox;
-    [SerializeField] private DialogueData startDialogue;
+    [SerializeField] private DialogueData startDialogue, finalDialogue;
     [SerializeField] private RectTransform npcRect;
     [SerializeField] private Vector2 fontBounds;
     [SerializeField] private float textGrowthMult;
