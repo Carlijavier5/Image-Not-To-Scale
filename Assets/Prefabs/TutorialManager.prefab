@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutImg: {fileID: 7010159525400397502}
   tutImgs:
+  - {fileID: 21300000, guid: d7eb97b974352734b8a2730303315a8e, type: 3}
   - {fileID: 21300000, guid: ed1bdcd90d6376545883efb46f10567b, type: 3}
   - {fileID: 21300000, guid: f360ce9dcbec63e44a638e1d7b43168e, type: 3}
 --- !u!223 &6414795591484135157

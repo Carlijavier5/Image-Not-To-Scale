@@ -31,9 +31,10 @@ public class AudioManager : MonoBehaviour {
     }
 
     private void Start() {
-        if (playPreamble) PlayMusicWithPreamble(musicSource.clip.name, sfxSource.clip.name);
-        else PlayMusic(musicSource.clip.name);
+        PlayMusic(musicSource.clip.name);
     }
+
+    public void StopMusic() => musicSource.Stop();
 
     public void PlayMusic(string clipName) {
         SoundClip soundClip = clips.FirstOrDefault((soundClip) => soundClip.name == clipName);

@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhonePickup"));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         dialogueManager.DoDialogue(DialogueType.Start);
         dialogueManager.OnDialogueEnd += ToTutorial1;
     }
@@ -79,5 +79,57 @@ public class GameManager : MonoBehaviour {
         fm.BuyItems(items);
         websiteManager.gameObject.SetActive(false);
         TransitionManager.Instance.CoverScreen(false);
+        fm.OnShowcaseEnd += Fm_OnShowcaseEnd;
+    }
+
+    private void Fm_OnShowcaseEnd() {
+        dialogueManager.gameObject.SetActive(true);
+        StartCoroutine(IFm_OnShowcaseEnd());
+    }
+
+    private IEnumerator IFm_OnShowcaseEnd() {
+        fm.OnShowcaseEnd -= Fm_OnShowcaseEnd;
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhonePickup"));
+        yield return new WaitForSeconds(0.5f);
+        dialogueManager.DoDialogue(DialogueType.Final);
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayMusicWithPreamble("Shopping-Chaotic-Intro", "Shopping-Chaotic-Loopable");
+        dialogueManager.OnDialogueEnd += StartW;
+    }
+
+    private void StartW() {
+        dialogueManager.OnDialogueEnd -= StartW;
+        StartCoroutine(W());
+    }
+
+    private IEnumerator W() {
+        yield return new WaitForSeconds(2);
+        TransitionManager.Instance.OnFadeChange += Instance_OnFadeChange; ;
+        TransitionManager.Instance.CoverScreen(true);
+    }
+
+    private void Instance_OnFadeChange(bool obj) {
+        websiteManager.gameObject.SetActive(true);
+        TransitionManager.Instance.CoverScreen(false);
+        websiteManager.OpenWebsite(pages[1].items);
+        websiteManager.OnSaleEnd += WebsiteManager_OnSaleEnd2;
+    }
+
+    private void WebsiteManager_OnSaleEnd2(System.Collections.Generic.List<(WebsiteItem, float)> list) {
+        items = list.ToArray();
+        websiteManager.OnSaleEnd -= WebsiteManager_OnSaleEnd2;
+        TransitionManager.Instance.OnFadeChange += ShowRes2;
+        TransitionManager.Instance.CoverScreen(true);
+    }
+
+    private void ShowRes2(bool _) {
+        TransitionManager.Instance.OnFadeChange -= ShowRes2;
+        fm = FindObjectOfType<FurnitureManager>();
+        fm.BuyItems(items);
+        websiteManager.gameObject.SetActive(false);
+        TransitionManager.Instance.CoverScreen(false);
+        fm.OnShowcaseEnd += Fm_OnShowcaseEnd;
     }
 }

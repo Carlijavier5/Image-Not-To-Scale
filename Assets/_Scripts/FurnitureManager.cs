@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FurnitureManager : MonoBehaviour {
 
+    public event System.Action OnShowcaseEnd;
+
     [SerializeField] private GameObject[] models;
     [SerializeField] private WebsiteItem[] websiteItems;
     [SerializeField] private AnimationCurve growthCurveXZ, growthCurveY;
@@ -47,6 +49,6 @@ public class FurnitureManager : MonoBehaviour {
                                            growthCurveXZ.Evaluate(lerpVal)) * items[i].Item2;
                 yield return null;
             }
-        }
+        } OnShowcaseEnd?.Invoke();
     }
 }

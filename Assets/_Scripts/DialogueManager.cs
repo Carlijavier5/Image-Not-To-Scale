@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void DoDialogue(DialogueType type) {
         dialogueBox.gameObject.SetActive(true);
-        currDialogue = type switch { _ => startDialogue };
+        currDialogue = type switch { DialogueType.Final => finalDialogue, _ => startDialogue };
         currLine = -1;
         LoadNextLine();
         StartCoroutine(IBeginDialogue());

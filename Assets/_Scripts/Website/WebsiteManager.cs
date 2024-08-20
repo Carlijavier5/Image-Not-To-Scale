@@ -21,7 +21,7 @@ public class WebsiteManager : MonoBehaviour {
             while (awaitingBuy) yield return null;
         }
         OnSaleEnd?.Invoke(buyList);
-        buyList = null;
+        buyList = new();
     }
 
     public void ConfirmBuy() {

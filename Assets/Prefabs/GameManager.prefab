@@ -337,7 +337,7 @@ MonoBehaviour:
   textMesh: {fileID: 4383029538760502175}
   dialogueBox: {fileID: 1420857275875893447}
   startDialogue: {fileID: 11400000, guid: 1eff430e9199fb647954ca8942de2c48, type: 2}
-  finalDialogue: {fileID: 0}
+  finalDialogue: {fileID: 11400000, guid: c18ca996373b8d4448bb02199fcaba2e, type: 2}
   npcRect: {fileID: 881319956892075302}
   fontBounds: {x: 24, y: 30}
   textGrowthMult: 500
