@@ -61,16 +61,19 @@ public class LoadingMotion : MonoBehaviour {
                 yield return null;
             } 
         } else {
-            while (lerpVal > 2) {
+            while (Vector3.Distance(loadingIcon.localScale, Vector3.zero) > Mathf.Epsilon) {
                 loadingText.localScale = Vector3.MoveTowards(loadingText.localScale, Vector3.zero, Time.deltaTime * growthMult * 1.5f);
-                if (loadingText.localScale == Vector3.zero) lerpVal = 1;
+                if (lerpVal < 3) {
+                    loadingIcon.localScale = Vector3.MoveTowards(loadingIcon.localScale, Vector3.zero, Time.deltaTime * growthMult * 1.5f);
+                }
+                lerpVal = Mathf.MoveTowards(lerpVal, 0, Time.deltaTime * growthMult);
                 yield return null;
-            } while (lerpVal > 0) {
-                loadingIcon.localScale = Vector3.MoveTowards(loadingIcon.localScale, Vector3.zero, Time.deltaTime * growthMult * 1.5f);
-                if (loadingIcon.localScale == Vector3.zero) lerpVal = 0;
-                yield return null;
-            } yield return new WaitForSeconds(0.5f);
+            }
+            yield return new WaitForSeconds(0.5f);
 
+            lerpVal = 0;
+            loadingText.localScale = Vector3.zero;
+            loadingIcon.localScale = Vector3.zero;
             loadingElements.gameObject.SetActive(false);
             
             OnLoadingDone?.Invoke();

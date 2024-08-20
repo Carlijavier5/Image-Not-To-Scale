@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour {
             Debug.LogError($"'{clipName}' was not found among the audio files;");
             return 0;
         } else {
-            sfxSource.pitch = 1 + Random.Range(-pitchVarAmp, pitchVarAmp);
+            sfxSource.pitch = 1 + Random.Range(0, pitchVarAmp);
             sfxSource.PlayOneShot(soundClip.clip);
             return soundClip.clip.length;
         }

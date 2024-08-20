@@ -305,27 +305,33 @@ MonoBehaviour:
   musicSource: {fileID: 8383789522617915094}
   sfxSource: {fileID: 7192968945275298060}
   clips:
-  - clip: {fileID: 8300000, guid: 08947ea3feb3c3545a9f807175646e26, type: 3}
+  - clip: {fileID: 8300000, guid: e7260bc080e1d75458d763a09c1be1ac, type: 3}
     name: Mom1
-  - clip: {fileID: 8300000, guid: 50dda9bfd6cd6504c9f9c0d08d3a3ef7, type: 3}
+  - clip: {fileID: 8300000, guid: bb4afb4795ab91e4aadf945bff663fec, type: 3}
     name: Mom2
-  - clip: {fileID: 8300000, guid: bbb1af89c81e7434ea7d760a798ffd45, type: 3}
+  - clip: {fileID: 8300000, guid: 4bd0d26c58648a34c990fe0939eed4c0, type: 3}
     name: Mom3
-  - clip: {fileID: 8300000, guid: 102745335b7683046a32d1f73584c9f6, type: 3}
+  - clip: {fileID: 8300000, guid: 58bde5ebe45045a48ae84a4aebef2b60, type: 3}
     name: Mom4
-  - clip: {fileID: 8300000, guid: 06329ffc95b9fc049a31a636eaff1ebb, type: 3}
+  - clip: {fileID: 8300000, guid: b025eedcb38f7db419099349aabea826, type: 3}
     name: Mom5
-  - clip: {fileID: 8300000, guid: fcf4c3c349484c648b32d498ca87a1f4, type: 3}
+  - clip: {fileID: 8300000, guid: 52eb851a00e6aa147b141af7594a1ebe, type: 3}
     name: Mom6
-  - clip: {fileID: 8300000, guid: e3ca03809e0d2bc43a5589bc3e5856a0, type: 3}
+  - clip: {fileID: 8300000, guid: a4a2fde1be5722447a6318561e649779, type: 3}
     name: Mom7
-  - clip: {fileID: 8300000, guid: e239c57db7a24df4e9c599a9d0c4a47b, type: 3}
+  - clip: {fileID: 8300000, guid: 6bbfed86d3dcb5749932cfbb4b408aa6, type: 3}
     name: Mom8
-  - clip: {fileID: 8300000, guid: 90629c7695ed8eb4e9a2d263055a7784, type: 3}
+  - clip: {fileID: 8300000, guid: fa7046d7b73d69b478073ff567b00985, type: 3}
     name: Mom9
-  - clip: {fileID: 8300000, guid: aaebce0a336f36c4f8dcf5f90405afaf, type: 3}
+  - clip: {fileID: 8300000, guid: b99d90ef596878644a10cad7759a79e9, type: 3}
     name: Mom10
-  - clip: {fileID: 8300000, guid: ee84baaad1752bb4bb94a90f24095a41, type: 3}
+  - clip: {fileID: 8300000, guid: 0d6bf8639169cfd4284d3c884759cfd3, type: 3}
     name: Mom11
-  - clip: {fileID: 8300000, guid: 80d0c533b0dd21941854779fa95a6bea, type: 3}
+  - clip: {fileID: 8300000, guid: 3efdae3f79c928d47940de86be7339f4, type: 3}
     name: Mom12
+  - clip: {fileID: 8300000, guid: 7ba56edf8e71f92449e3a52b642c5a81, type: 3}
+    name: PhoneNoReverb
+  - clip: {fileID: 8300000, guid: f426a63b20259344492841359ab58994, type: 3}
+    name: PhonePickup
+  - clip: {fileID: 8300000, guid: 8e1993306a24a9a449418fd979ba6b32, type: 3}
+    name: PhoneReverb
