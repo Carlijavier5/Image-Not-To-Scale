@@ -4001,8 +4001,8 @@ MonoBehaviour:
   - {fileID: 762788504}
   - {fileID: 1496951456}
   _tabIdle: {fileID: 21300000, guid: 8ceae6c22367067469a39a3bbdc16b60, type: 3}
-  _tabHover: {fileID: 21300000, guid: ecd073b96c7640648bd1ca4fa14cc58c, type: 3}
-  _tabActive: {fileID: 21300000, guid: a30e5cdf9a8cf3443978ef53a43c2422, type: 3}
+  _tabHover: {fileID: 21300000, guid: 5b8494a0519419b48bf96fc58f9f82a3, type: 3}
+  _tabActive: {fileID: 21300000, guid: 09bc82c49e5879444abd1c4f8d43501b, type: 3}
 --- !u!1 &1943506537
 GameObject:
   m_ObjectHideFlags: 0
