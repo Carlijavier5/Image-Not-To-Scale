@@ -28,11 +28,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator IStartGame() {
+        AudioManager.Instance.StopMusic();
         yield return new WaitForSeconds(1f);
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhonePickup"));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         dialogueManager.DoDialogue(DialogueType.Start);
         dialogueManager.OnDialogueEnd += ToTutorial1;
     }
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void ToTutorial2(bool _) {
+        AudioManager.Instance.PlayMusic("ShopStart-NORMAL");
         TransitionManager.Instance.OnFadeChange -= ToTutorial2;
         tutorialManager.gameObject.SetActive(true);
         tutorialManager.OnTutorialEnd += ExitTutorial;
@@ -83,19 +85,17 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Fm_OnShowcaseEnd() {
+        AudioManager.Instance.StopMusic();
         dialogueManager.gameObject.SetActive(true);
         StartCoroutine(IFm_OnShowcaseEnd());
     }
 
     private IEnumerator IFm_OnShowcaseEnd() {
         fm.OnShowcaseEnd -= Fm_OnShowcaseEnd;
-        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
-        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneNoReverb"));
         yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhonePickup"));
         yield return new WaitForSeconds(0.5f);
         dialogueManager.DoDialogue(DialogueType.Final);
-        AudioManager.Instance.StopMusic();
-        AudioManager.Instance.PlayMusicWithPreamble("Shopping-Chaotic-Intro", "Shopping-Chaotic-Loopable");
         dialogueManager.OnDialogueEnd += StartW;
     }
 
@@ -106,20 +106,25 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator W() {
         yield return new WaitForSeconds(2);
-        TransitionManager.Instance.OnFadeChange += Instance_OnFadeChange; ;
+        TransitionManager.Instance.OnFadeChange += Instance_OnFadeChange;
+        StopAllCoroutines();
         TransitionManager.Instance.CoverScreen(true);
     }
 
     private void Instance_OnFadeChange(bool obj) {
+        TransitionManager.Instance.OnFadeChange -= Instance_OnFadeChange;
         websiteManager.gameObject.SetActive(true);
+        StopAllCoroutines();
         TransitionManager.Instance.CoverScreen(false);
         websiteManager.OpenWebsite(pages[1].items);
+        AudioManager.Instance.PlayMusicWithPreamble("Shopping-Chaotic-Intro", "Shopping-Chaotic-Loopable");
         websiteManager.OnSaleEnd += WebsiteManager_OnSaleEnd2;
     }
 
     private void WebsiteManager_OnSaleEnd2(System.Collections.Generic.List<(WebsiteItem, float)> list) {
         items = list.ToArray();
         websiteManager.OnSaleEnd -= WebsiteManager_OnSaleEnd2;
+        StopAllCoroutines();
         TransitionManager.Instance.OnFadeChange += ShowRes2;
         TransitionManager.Instance.CoverScreen(true);
     }

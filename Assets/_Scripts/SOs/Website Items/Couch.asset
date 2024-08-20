@@ -16,7 +16,7 @@ MonoBehaviour:
   productName: Couch
   avgReviews: 0
   description: 
-  scaleUnit: 0
-  wholeNumbers: 0
-  minMax: {x: 1, y: 9}
-  idealAmount: 5
+  scaleUnit: 2
+  wholeNumbers: 1
+  minMax: {x: 1, y: 3}
+  idealAmount: 1

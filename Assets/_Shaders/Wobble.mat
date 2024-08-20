@@ -29,9 +29,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FrameRate: 1
-    - _ImperfectionStrength: 0
+    - _FrameRate: 7.72
+    - _ImperfectionStrength: 0.13
     - _ManualEnthickenLines: 0
-    - _WobbleStrength: 0
+    - _WobbleStrength: 0.24
     m_Colors: []
   m_BuildTextureStacks: []

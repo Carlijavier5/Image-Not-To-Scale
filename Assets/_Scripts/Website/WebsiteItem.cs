@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ScaleUnit { Inches, Mice, Eagles }
+public enum ScaleUnit { Inches, Mice, Eagles, Frog }
 
 [CreateAssetMenu()]
 public class WebsiteItem : ScriptableObject {

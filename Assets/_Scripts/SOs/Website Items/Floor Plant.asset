@@ -17,6 +17,6 @@ MonoBehaviour:
   avgReviews: 0
   description: 
   scaleUnit: 0
-  wholeNumbers: 0
-  minMax: {x: 1, y: 4}
-  idealAmount: 1
+  wholeNumbers: 1
+  minMax: {x: 1, y: 60}
+  idealAmount: 10

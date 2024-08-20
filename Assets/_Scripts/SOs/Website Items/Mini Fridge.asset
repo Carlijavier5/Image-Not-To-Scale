@@ -16,7 +16,7 @@ MonoBehaviour:
   productName: Mini Fridge
   avgReviews: 0
   description: 
-  scaleUnit: 1
+  scaleUnit: 3
   wholeNumbers: 0
-  minMax: {x: 5, y: 10}
-  idealAmount: 8
+  minMax: {x: 1, y: 40}
+  idealAmount: 10.5

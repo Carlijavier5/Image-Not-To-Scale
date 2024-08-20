@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour {
             npcRect.anchorMin = Vector2.MoveTowards(npcRect.anchorMin, new Vector2(npcRect.anchorMin.x, targetAnchor.x), Time.deltaTime * anchorSpeed);
             npcRect.anchorMax = Vector2.MoveTowards(npcRect.anchorMax, new Vector2(npcRect.anchorMax.x, targetAnchor.y), Time.deltaTime * anchorSpeed);
             yield return null;
-        } yield return new WaitForSeconds(0.5f);
+        } yield return new WaitForSeconds(0.2f);
         StartCoroutine(IPlayDialogue());
     }
 

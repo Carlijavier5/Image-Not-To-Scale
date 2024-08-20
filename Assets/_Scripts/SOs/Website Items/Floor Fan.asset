@@ -16,7 +16,7 @@ MonoBehaviour:
   productName: Floor Fan
   avgReviews: 0
   description: 
-  scaleUnit: 0
+  scaleUnit: 3
   wholeNumbers: 0
-  minMax: {x: 1, y: 5}
-  idealAmount: 2
+  minMax: {x: 1, y: 15}
+  idealAmount: 10

@@ -16,7 +16,7 @@ MonoBehaviour:
   productName: Carpet
   avgReviews: 0
   description: 
-  scaleUnit: 0
+  scaleUnit: 1
   wholeNumbers: 1
-  minMax: {x: 1, y: 4}
-  idealAmount: 3
+  minMax: {x: 1, y: 20}
+  idealAmount: 16
