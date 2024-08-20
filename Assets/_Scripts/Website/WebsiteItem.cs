@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ScaleUnit { Mouse, Eagle, Frog }
+public enum ScaleUnit { Inches, Mice, Eagles }
 
 [CreateAssetMenu()]
 public class WebsiteItem : ScriptableObject {
@@ -9,4 +9,7 @@ public class WebsiteItem : ScriptableObject {
     [Range(0, 10)] public int avgReviews;
     public string description;
     public ScaleUnit scaleUnit;
+    public bool wholeNumbers;
+    public Vector2 minMax;
+    public float idealAmount = 0;
 }

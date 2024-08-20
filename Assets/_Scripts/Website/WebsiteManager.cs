@@ -2,49 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WebsiteManager : MonoBehaviour 
-{
-    [SerializeField] private WebItem[] _webItems;
-    [SerializeField] private GameObject _shoppingPage;
-    [SerializeField] private ItemBuyPage _itemBuyPage;
-    private Canvas _canvas;
+public class WebsiteManager : MonoBehaviour {
 
-    // TESTING ONLY
-    public WebsiteItem[] _SOItems;
+    public event System.Action<List<(WebsiteItem, float)>> OnSaleEnd;
 
-    void Start() {
-        _canvas = GetComponent<Canvas>();
-
-        // TESTING ONLY
-        OpenWebsite(_SOItems);
-    }
+    [SerializeField] private WebThing webThing;
+    private List<(WebsiteItem, float)> buyList;
+    private bool awaitingBuy;
 
     public void OpenWebsite(WebsiteItem[] items) {
-        _canvas.enabled = true;
-        UpdateWebItems(items);
+        StartCoroutine(ShowItems(items));
     }
 
-    /// <summary>
-    /// Update the items in the scroll list
-    /// </summary>
-    private void UpdateWebItems(WebsiteItem[] items) {
+    private IEnumerator ShowItems(WebsiteItem[] items) {
         for (int i = 0; i < items.Length; i++) {
-            _webItems[i].LoadWebItem(items[i], this);
+            webThing.SetupItem(items[i]);
+            awaitingBuy = true;
+            while (awaitingBuy) yield return null;
         }
+        OnSaleEnd?.Invoke(buyList);
+        buyList = null;
     }
 
-    // managing the behaviors of clicking on an item to buy
-    public void OnItemEnter(WebItem item) {
-        
-    }
-
-    public void OnItemExit(WebItem item) {
-
-    }
-
-    public void OnItemSelected(WebItem item) {
-        _itemBuyPage.gameObject.SetActive(true);
-        _shoppingPage.gameObject.SetActive(false);
-        _itemBuyPage.OpenPage(item.GetItemData());
+    public void ConfirmBuy() {
+        awaitingBuy = false;
+        buyList.Add(webThing.ReadValue());
     }
 }
