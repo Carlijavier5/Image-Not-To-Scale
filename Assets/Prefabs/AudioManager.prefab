@@ -329,3 +329,9 @@ MonoBehaviour:
     name: Mom11
   - clip: {fileID: 8300000, guid: 3efdae3f79c928d47940de86be7339f4, type: 3}
     name: Mom12
+  - clip: {fileID: 8300000, guid: 7ba56edf8e71f92449e3a52b642c5a81, type: 3}
+    name: PhoneNoReverb
+  - clip: {fileID: 8300000, guid: f426a63b20259344492841359ab58994, type: 3}
+    name: PhonePickup
+  - clip: {fileID: 8300000, guid: 8e1993306a24a9a449418fd979ba6b32, type: 3}
+    name: PhoneReverb

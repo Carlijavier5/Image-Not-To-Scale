@@ -23,7 +23,11 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator IStartGame() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhoneReverb"));
+        yield return new WaitForSeconds(AudioManager.Instance.PlaySFX("PhonePickup"));
+        yield return new WaitForSeconds(1f);
         dialogueManager.DoDialogue(DialogueType.Start);
     }
 }
