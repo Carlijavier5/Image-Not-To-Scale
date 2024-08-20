@@ -25,6 +25,7 @@ public class TransitionManager : MonoBehaviour {
             return;
         }
 
+        cg.interactable = false;
         fadeBG.fillAmount = 1;
         StartCoroutine(EnterMainMenu());
     }
@@ -54,6 +55,7 @@ public class TransitionManager : MonoBehaviour {
     private void BeginGame() => StartCoroutine(IUnfadeFB());
 
     public void FadeFB(bool fadeout) {
+        StopAllCoroutines();
         if (fadeout) StartCoroutine(IFadeFB());
         else StartCoroutine(IUnfadeFB());
     }

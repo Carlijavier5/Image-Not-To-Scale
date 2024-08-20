@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: Page2
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: eb7d1da693ae5264397de0d16cbb20b2, type: 2}
   - {fileID: 11400000, guid: 88ac12adb691b6f48b541862a6eed377, type: 2}
   - {fileID: 11400000, guid: c5b15f391e546674a92947c635ddc7e7, type: 2}
-  - {fileID: 11400000, guid: 34bf53c62ebfd1944b28319bdd7d9d9d, type: 2}
-  - {fileID: 11400000, guid: 633d3228d5fa9574c87e0d8c7b38851b, type: 2}
-  - {fileID: 11400000, guid: 06271be40037df84dbffa76e4b28dc0f, type: 2}
   - {fileID: 11400000, guid: 73f663e00bba9c54d90f72f936d2a6e9, type: 2}
-  - {fileID: 11400000, guid: e85821949a4b953439acfdad5f638bc4, type: 2}
   - {fileID: 11400000, guid: ebef65eaa242ee2408db9bb8db18c584, type: 2}
   - {fileID: 11400000, guid: 9ac4d449cb3fbd34aab97c4d8c79e8c2, type: 2}

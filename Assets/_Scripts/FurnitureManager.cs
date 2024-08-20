@@ -24,6 +24,7 @@ public class FurnitureManager : MonoBehaviour {
         furnitureDict = new();
         for (int i = 0; i < models.Length; i++) {
             furnitureDict[websiteItems[i]] = models[i];
+            models[i].transform.localScale = Vector3.zero;
         }
     }
 

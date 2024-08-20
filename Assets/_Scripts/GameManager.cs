@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 
     private void ToTutorial1() {
         dialogueManager.OnDialogueEnd -= ToTutorial1;
+        dialogueManager.gameObject.SetActive(false);
         TransitionManager.Instance.OnFadeChange += ToTutorial2;
         TransitionManager.Instance.CoverScreen(true);
     }
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour {
 
     private void ShowRes1(bool _) {
         TransitionManager.Instance.OnFadeChange -= ShowRes1;
+        fm = FindObjectOfType<FurnitureManager>();
         fm.BuyItems(items);
         websiteManager.gameObject.SetActive(false);
         TransitionManager.Instance.CoverScreen(false);

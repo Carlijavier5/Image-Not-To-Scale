@@ -7,7 +7,7 @@ public class WebsiteManager : MonoBehaviour {
     public event System.Action<List<(WebsiteItem, float)>> OnSaleEnd;
 
     [SerializeField] private WebThing webThing;
-    private List<(WebsiteItem, float)> buyList;
+    private List<(WebsiteItem, float)> buyList = new();
     private bool awaitingBuy;
 
     public void OpenWebsite(WebsiteItem[] items) {
