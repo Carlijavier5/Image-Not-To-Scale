@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource musicSource, sfxSource;
     [SerializeField] private SoundClip[] clips;
 
+    [SerializeField] private bool playPreamble;
+
     void Awake() {
         if (Instance == null) {
             Instance = this;
@@ -29,7 +31,8 @@ public class AudioManager : MonoBehaviour {
     }
 
     private void Start() {
-        PlayMusic(musicSource.clip.name);
+        if (playPreamble) PlayMusicWithPreamble(musicSource.clip.name, sfxSource.clip.name);
+        else PlayMusic(musicSource.clip.name);
     }
 
     public void PlayMusic(string clipName) {
@@ -45,9 +48,21 @@ public class AudioManager : MonoBehaviour {
     public void PlayMusicWithPreamble(string introName, string loopName) {
         SoundClip introClip = clips.FirstOrDefault((soundClip) => soundClip.name == introName);
         SoundClip loopClip = clips.FirstOrDefault((soundClip) => soundClip.name == loopName);
-        
+        PlaySFX(introClip.name);
+        StartCoroutine(PlayLoopable(loopClip));
     }
-    
+
+    private IEnumerator PlayLoopable(SoundClip loopClip) {
+        while (sfxSource.isPlaying && !_preambleFinished) {
+            Debug.Log("hi");
+            yield return null;
+        }
+
+        _preambleFinished = true;
+        PlayMusic(loopClip.name);
+    }
+
+    private bool _preambleFinished = false;
     public float PlaySFX(string clipName, float pitchVarAmp = 0) {
         SoundClip soundClip = clips.FirstOrDefault((soundClip) => soundClip.name == clipName);
         if (soundClip == null) {

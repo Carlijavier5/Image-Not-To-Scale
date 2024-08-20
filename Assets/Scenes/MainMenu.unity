@@ -2276,8 +2276,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
         type: 3}
+      propertyPath: playPreamble
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
+        type: 3}
       propertyPath: clips.Array.size
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
         type: 3}
@@ -2288,6 +2293,26 @@ PrefabInstance:
         type: 3}
       propertyPath: clips.Array.data[15].name
       value: ShopStart-NORMAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
+        type: 3}
+      propertyPath: clips.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 25041072ac50d6b41a356f02a1778db7, type: 3}
+    - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
+        type: 3}
+      propertyPath: clips.Array.data[16].name
+      value: Shopping-Chaotic-Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
+        type: 3}
+      propertyPath: clips.Array.data[17].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 84e8d023c565ed8479fc5dad05f2769a, type: 3}
+    - target: {fileID: 3083619463082031909, guid: b6a6087489aa0c3419ae0a1f46faa929,
+        type: 3}
+      propertyPath: clips.Array.data[17].name
+      value: Shopping-Chaotic-Loopable
       objectReference: {fileID: 0}
     - target: {fileID: 5376938036995023799, guid: b6a6087489aa0c3419ae0a1f46faa929,
         type: 3}
