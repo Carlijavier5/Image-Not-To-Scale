@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc516b572f774984f8826557e7691d20, type: 3}
   m_Name: TV Stand
   m_EditorClassIdentifier: 
-  websitePNG: {fileID: 0}
+  websitePNG: {fileID: 21300000, guid: ad3ea509844945744a488d6350d49b44, type: 3}
   productName: TV Stand
   avgReviews: 0
   description: 

@@ -29,6 +29,6 @@ public class WebThing : MonoBehaviour {
     }
 
     public (WebsiteItem, float) ReadValue() {
-        return (item, 0);
+        return (item, ST_CalculateDeviation.CalculateScaleFactor(item.idealAmount, slider.value, item.minMax));
     }
 }

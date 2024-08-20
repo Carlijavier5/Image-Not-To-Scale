@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc516b572f774984f8826557e7691d20, type: 3}
   m_Name: Marmelade
   m_EditorClassIdentifier: 
-  websitePNG: {fileID: 0}
+  websitePNG: {fileID: 21300000, guid: 7c0e3d253ad9c0348b123d45d91d8c7c, type: 3}
   productName: Marmelade
   avgReviews: 0
   description: 
