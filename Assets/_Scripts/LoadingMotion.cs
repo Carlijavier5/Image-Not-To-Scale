@@ -38,7 +38,7 @@ public class LoadingMotion : MonoBehaviour {
             if (tickTimer > dotTickInterval) {
                 tickTimer = 0;
                 textMesh.text = "Loading " + (dots switch { 0 => "", 1 => ".", 2 => ". .", _ => ". . ." });
-                dots = (dots + 1) % 3;
+                dots = (dots + 1) % 4;
             }
         }
     }

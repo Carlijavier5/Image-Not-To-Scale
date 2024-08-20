@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba92fbfa009040642bb9180d9373ab72, type: 3}
+  m_Name: StartDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - Hi sweetie!
+  - Congrats on moving out of college!
+  - I heard your new house is still unfurnished.
+  - And I know you are in a lot of debt right now...
+  - And I mean a lot of debt... Like big debt...
+  - Lots of debt indeed :D
+  - But worry not! There's a big sale on 'Ama-zoom' right now!
+  - I sent you a list of furniture items you may need. You should try to grab them
+    before the sale ends.
+  - I hear they even let you pick sizes!
+  - Anyway, best of luck buying everything honey!
+  - Do hurry up though. The sale ends in 1 minute :D
