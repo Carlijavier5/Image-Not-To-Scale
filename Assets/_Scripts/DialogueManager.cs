@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour {
 
     private void PlayDialogueAudio() {
         string clipName = $"Mom{Random.Range(1, 13)}";
-        AudioManager.Instance.PlaySFX(clipName, 0.05f);
+        AudioManager.Instance.PlaySFX(clipName, 0.25f);
         audioCD = audioInterval;
     }
 

@@ -238,7 +238,7 @@ MonoBehaviour:
   startDialogue: {fileID: 11400000, guid: 1eff430e9199fb647954ca8942de2c48, type: 2}
   fontBounds: {x: 24, y: 30}
   textGrowthMult: 425
-  audioInterval: 0.4
+  audioInterval: 0.35
 --- !u!223 &4942066426173140950
 Canvas:
   m_ObjectHideFlags: 0
