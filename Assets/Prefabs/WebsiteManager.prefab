@@ -917,17 +917,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852001738334493036}
+  - component: {fileID: 8076057520133680315}
   - component: {fileID: 7324128075338604248}
   - component: {fileID: 2176917777528873916}
   - component: {fileID: 1373351203847467011}
-  - component: {fileID: 8076057520133680315}
   m_Layer: 5
   m_Name: WebsiteManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5852001738334493036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -948,6 +948,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &8076057520133680315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441987634977377708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e64690d1b6a55143855a8ba5501becf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _webItems:
+  - {fileID: 4802486759298838700}
+  - {fileID: 5618736194616146149}
+  - {fileID: 6205995334337523271}
+  - {fileID: 4266342478707676781}
+  - {fileID: 557372646161766414}
+  _shoppingPage: {fileID: 1235646382240035627}
+  _itemBuyPage: {fileID: 4128695833005932547}
+  _SOItems:
+  - {fileID: 11400000, guid: d996faa7f3ebbe443aae67329829f882, type: 2}
+  - {fileID: 11400000, guid: ff9ebdf2b82b26d4c86619c03d1d3482, type: 2}
+  - {fileID: 11400000, guid: 01ca2960f7dd5dc40b8ff6bb777026b0, type: 2}
 --- !u!223 &7324128075338604248
 Canvas:
   m_ObjectHideFlags: 0
@@ -1011,30 +1035,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8076057520133680315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441987634977377708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e64690d1b6a55143855a8ba5501becf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _webItems:
-  - {fileID: 4802486759298838700}
-  - {fileID: 5618736194616146149}
-  - {fileID: 6205995334337523271}
-  - {fileID: 4266342478707676781}
-  - {fileID: 557372646161766414}
-  _shoppingPage: {fileID: 1235646382240035627}
-  _itemBuyPage: {fileID: 4128695833005932547}
-  _SOItems:
-  - {fileID: 11400000, guid: d996faa7f3ebbe443aae67329829f882, type: 2}
-  - {fileID: 11400000, guid: ff9ebdf2b82b26d4c86619c03d1d3482, type: 2}
-  - {fileID: 11400000, guid: 01ca2960f7dd5dc40b8ff6bb777026b0, type: 2}
 --- !u!1 &1994091921777891056
 GameObject:
   m_ObjectHideFlags: 0
