@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba92fbfa009040642bb9180d9373ab72, type: 3}
   m_Name: Dialogue2
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - HONEY!
+  - I've beem scrolling through the 'Ama-Zoom' sale and there really are so many
+    items a new homeowner like you could use.
+  - PLUS IT'S ALL DIRT CHEAP.
+  - I know you've always had a hard time making choices by yourself...
+  - I mean, there's a reason I helped you pick your outfits all the way up to the
+    10th grade,
+  - So, I decided to add some items to your shopping list that I think would help
+    you out a ton!
+  - You should really get a move on though darling.
+  - The sale ends in X minutes so GO GO GO.
+  - . . .
+  - Oh, the items are cheap becuse they're coming from some places overseas.
+  - I hope you remeber your unit conversions from grade school! :D
