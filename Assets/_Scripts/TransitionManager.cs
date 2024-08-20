@@ -26,8 +26,17 @@ public class TransitionManager : MonoBehaviour {
         }
 
         fadeBG.fillAmount = 1;
-        StartCoroutine(CoverScreen(false));
+        StartCoroutine(EnterMainMenu());
     }
+
+    private IEnumerator EnterMainMenu() {
+        loadingMotion.InitiateLoading();
+        yield return new WaitForSeconds(2f);
+        loadingMotion.OnLoadingDone += RevealMainMenu;
+        loadingMotion.FinishLoading();
+    }
+
+    private void RevealMainMenu() => StartCoroutine(CoverScreen(false));
 
     public void StartGame() => StartCoroutine(IStartGame());
 
@@ -42,9 +51,17 @@ public class TransitionManager : MonoBehaviour {
         loadingMotion.FinishLoading();
     }
 
-    private void BeginGame() => StartCoroutine(CoverScreen(false));
+    private void BeginGame() => StartCoroutine(UnfadeFB());
+
+    private IEnumerator UnfadeFB() {
+        while (cg.alpha > 0) {
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
+            yield return null;
+        }
+    }
 
     private IEnumerator CoverScreen(bool fadeout) {
+        cg.alpha = 1;
         float target = fadeout ? 1 : 0;
         fadeBG.fillClockwise = fadeout;
         if (fadeout) cg.blocksRaycasts = fadeout;
