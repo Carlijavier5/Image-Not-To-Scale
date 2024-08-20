@@ -142,7 +142,9 @@ MonoBehaviour:
   dialogueManager: {fileID: 4540766004312652422}
   websiteManager: {fileID: 822280842842205458}
   tutorialManager: {fileID: 5185714379703669760}
-  pages: []
+  pages:
+  - {fileID: 11400000, guid: 25e864b1e570cec41bdd9de0f338b3e7, type: 2}
+  - {fileID: 11400000, guid: 186e78e50e6d6e44ba93c6cc5cbf6559, type: 2}
 --- !u!1 &1580849208157444086
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +335,7 @@ MonoBehaviour:
   textMesh: {fileID: 4383029538760502175}
   dialogueBox: {fileID: 1420857275875893447}
   startDialogue: {fileID: 11400000, guid: 1eff430e9199fb647954ca8942de2c48, type: 2}
+  finalDialogue: {fileID: 0}
   npcRect: {fileID: 881319956892075302}
   fontBounds: {x: 24, y: 30}
   textGrowthMult: 500
@@ -889,6 +892,11 @@ PrefabInstance:
     - target: {fileID: 5852001738334493036, guid: f501ffb014c644748ab0e21759658ef2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541925852467106733, guid: f501ffb014c644748ab0e21759658ef2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8850039198478633537, guid: f501ffb014c644748ab0e21759658ef2,

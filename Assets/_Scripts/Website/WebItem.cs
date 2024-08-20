@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,26 @@ public class WebItem : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
     void Start() { _thisImage = this.gameObject.GetComponent<Image>(); }
 
     public void LoadWebItem(WebsiteItem webItemData, WebsiteManager manager) {
-        _itemImage.sprite = webItemData.websitePNG;
-        _itemName.text = webItemData.productName;
-        _siteManager = manager;
-        _itemData = webItemData;
+        if (webItemData != null) {
+            _itemImage.sprite = webItemData.websitePNG;
+            _itemName.text = webItemData.productName;
+            _siteManager = manager;
+            _itemData = webItemData;
+        } else {
+            _siteManager = manager;
+            int number = Random.Range(0, 3);
+            switch (number) {
+                case 0:
+                    _itemName.text = "Out of Stock";
+                    break;
+                case 1:
+                    _itemName.text = "Ewwor Ow0 Four";
+                    break;
+                case 2:
+                    _itemName.text = "Age Restricted";
+                    break;
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData) {
@@ -38,3 +55,4 @@ public class WebItem : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
         return _itemData;
     }
 }
+*/

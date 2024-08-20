@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour {
         websiteManager.gameObject.SetActive(true);
         TransitionManager.Instance.OnFadeChange += CountDown1;
         TransitionManager.Instance.CoverScreen(false);
+        websiteManager.OpenWebsite(pages[0].items);
     }
 
     private void CountDown1(bool _) {
