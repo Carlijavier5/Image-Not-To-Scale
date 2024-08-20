@@ -1,7 +1,9 @@
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour {
 
@@ -24,6 +26,10 @@ public class AudioManager : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+    }
+
+    private void Start() {
+        PlayMusic(musicSource.clip.name);
     }
 
     public void PlayMusic(string clipName) {
