@@ -2,17 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WebsiteManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class WebsiteManager : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
