@@ -27,13 +27,13 @@ public class FurnitureManager : MonoBehaviour {
         }
     }
 
-    public void BuyItems(WebsiteItem[] items, float scale) {
-        StartCoroutine(AnimateObjectSpawn(items, scale));
+    public void BuyItems((WebsiteItem, float)[] items) {
+        StartCoroutine(AnimateObjectSpawn(items));
     }
 
-    private IEnumerator AnimateObjectSpawn(WebsiteItem[] items, float scale) {
+    private IEnumerator AnimateObjectSpawn((WebsiteItem, float)[] items) {
         for (int i = 0; i < items.Length; i++) {
-            GameObject go = furnitureDict[items[i]];
+            GameObject go = furnitureDict[items[i].Item1];
             go.transform.localScale = Vector3.zero;
             go.SetActive(true);
             Transform t = go.transform;
@@ -43,7 +43,7 @@ public class FurnitureManager : MonoBehaviour {
                 lerpVal = Mathf.MoveTowards(lerpVal, 1, Time.deltaTime);
                 t.localScale = new Vector3(growthCurveXZ.Evaluate(lerpVal),
                                            growthCurveY.Evaluate(lerpVal),
-                                           growthCurveXZ.Evaluate(lerpVal));
+                                           growthCurveXZ.Evaluate(lerpVal)) * items[i].Item2;
                 yield return null;
             }
         }

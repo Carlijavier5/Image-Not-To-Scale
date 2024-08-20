@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -8,7 +9,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private WebsiteManager websiteManager;
     [SerializeField] private TutorialManager tutorialManager;
+    [SerializeField] private FurnitureManager fm;
     [SerializeField] private WebsitePage[] pages;
+    private (WebsiteItem, float)[] items;
 
     void Awake() {
         if (Instance == null) {
@@ -57,12 +60,22 @@ public class GameManager : MonoBehaviour {
         TransitionManager.Instance.OnFadeChange -= ToWebsiteLvl1;
         tutorialManager.gameObject.SetActive(false);
         websiteManager.gameObject.SetActive(true);
-        TransitionManager.Instance.OnFadeChange += CountDown1;
         TransitionManager.Instance.CoverScreen(false);
         websiteManager.OpenWebsite(pages[0].items);
+        websiteManager.OnSaleEnd += WebsiteManager_OnSaleEnd;
     }
 
-    private void CountDown1(bool _) {
+    private void WebsiteManager_OnSaleEnd(System.Collections.Generic.List<(WebsiteItem, float)> list) {
+        items = list.ToArray();
+        websiteManager.OnSaleEnd -= WebsiteManager_OnSaleEnd;
+        TransitionManager.Instance.OnFadeChange += ShowRes1;
+        TransitionManager.Instance.CoverScreen(true);
+    }
 
-    } 
+    private void ShowRes1(bool _) {
+        TransitionManager.Instance.OnFadeChange -= ShowRes1;
+        fm.BuyItems(items);
+        websiteManager.gameObject.SetActive(false);
+        TransitionManager.Instance.CoverScreen(false);
+    }
 }

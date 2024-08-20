@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc516b572f774984f8826557e7691d20, type: 3}
   m_Name: Sylvie Poster
   m_EditorClassIdentifier: 
-  websitePNG: {fileID: 0}
+  websitePNG: {fileID: 21300000, guid: 024055356a36add409ab3b0fa783c5e3, type: 3}
   productName: Sylvie
   avgReviews: 0
   description: 
