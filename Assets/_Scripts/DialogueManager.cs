@@ -97,6 +97,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private IEnumerator IEndDialogue() {
+        state = State.Idle;
         ResetText();
         while (npcRect.anchorMin.y != nameYAnchor.x
                || npcRect.anchorMax.y != nameYAnchor.y) {

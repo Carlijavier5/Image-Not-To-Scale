@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 4540766004312652422}
-  websiteManager: {fileID: 0}
+  websiteManager: {fileID: 822280842842205458}
   tutorialManager: {fileID: 5185714379703669760}
   pages: []
 --- !u!1 &1580849208157444086
@@ -911,6 +911,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f501ffb014c644748ab0e21759658ef2, type: 3}
+--- !u!114 &822280842842205458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8076057520133680315, guid: f501ffb014c644748ab0e21759658ef2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8897634671199207849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e64690d1b6a55143855a8ba5501becf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3048025470179350725 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5852001738334493036, guid: f501ffb014c644748ab0e21759658ef2,

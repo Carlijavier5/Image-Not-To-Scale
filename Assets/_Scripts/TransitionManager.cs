@@ -60,7 +60,7 @@ public class TransitionManager : MonoBehaviour {
 
     private IEnumerator IUnfadeFB() {
         while (cg.alpha > 0) {
-            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.6f);
             yield return null;
         } OnFadeChange?.Invoke(false);
         OnFadeChange = null;
@@ -68,7 +68,7 @@ public class TransitionManager : MonoBehaviour {
 
     private IEnumerator IFadeFB() {
         while (cg.alpha < 1) {
-            cg.alpha = Mathf.MoveTowards(cg.alpha, 0, Time.deltaTime * 0.4f);
+            cg.alpha = Mathf.MoveTowards(cg.alpha, 1, Time.deltaTime);
             yield return null;
         } OnFadeChange?.Invoke(true);
         OnFadeChange = null;
@@ -81,6 +81,7 @@ public class TransitionManager : MonoBehaviour {
         float target = fadeout ? 1 : 0;
         fadeBG.fillClockwise = fadeout;
         if (fadeout) cg.blocksRaycasts = fadeout;
+        if (fadeout) fadeBG.fillAmount = 0;
         while (fadeBG.fillAmount != target) {
             float delta = Time.deltaTime * (1 / (transitionTime == 0 ? 1 : transitionTime));
             fadeBG.fillAmount = Mathf.MoveTowards(fadeBG.fillAmount, target, delta);
